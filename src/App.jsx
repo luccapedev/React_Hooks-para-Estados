@@ -10,7 +10,7 @@ import { ToDoItem } from "./components/ToDoItem"
 import { ToDoList } from "./components/ToDoList"
 import { Dialog } from "./components/Dialog";
 import { useState } from "react"
-import { TextInput } from "./components/TextInput"
+import { ToDoForm } from "./components/ToDoForm"
 
 const todos = [
   {
@@ -62,6 +62,10 @@ function App() {
     console.log('alternar modal')
   }
 
+  const addTodo = () => {
+    console.log('precisamos add um novo todo');
+  }
+
   return (
     <main>
       <Container>
@@ -70,7 +74,7 @@ function App() {
             <IconSchool /> Plano de estudos
           </Heading>
         </Header>
-        <Dialog/>
+        <Dialog />
         <ChecklistsWrapper>
           <SubHeading>Para estudar</SubHeading>
           <ToDoList>
@@ -86,9 +90,7 @@ function App() {
           </ToDoList>
           <Footer>
             <Dialog isOpen={showDialog} onClose={toggleDialog}>
-              <form>
-                <TextInput placeholder="Digite o item que deseja adicionar"/>
-              </form>
+              <ToDoForm onSubmit={addTodo} />
             </Dialog>
             <FabButton onClick={toggleDialog}>
               <IconPlus />
