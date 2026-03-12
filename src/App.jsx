@@ -53,6 +53,13 @@ const completed = [
 
 function App() {
 
+  const [showDialog, setShowDialog] = useState(false)
+
+  const toggleDialog = () => {
+    setShowDialog(!showDialog)
+    console.log('alternar modal')
+  }
+
   return (
     <main>
       <Container>
@@ -76,7 +83,8 @@ function App() {
             })}
           </ToDoList>
           <Footer>
-            <FabButton>
+            <Dialog isOpen={showDialog}/>
+            <FabButton onClick={toggleDialog}>
               <IconPlus />
             </FabButton>
           </Footer>
