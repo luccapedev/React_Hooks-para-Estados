@@ -32,7 +32,10 @@ export function Dialog({ isOpen, onClose, children }) {
                         <IconClose />
                     </button>
                 </div>
+                <div className="body">
                 {children}
+
+                </div>
             </dialog>
         </React.Fragment>
     )
