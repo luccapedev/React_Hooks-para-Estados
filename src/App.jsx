@@ -9,6 +9,7 @@ import { SubHeading } from "./components/SubHeading"
 import { ToDoItem } from "./components/ToDoItem"
 import { ToDoList } from "./components/ToDoList"
 import { Dialog } from "./components/Dialog";
+import { useState } from "react"
 
 const todos = [
   {
@@ -83,7 +84,7 @@ function App() {
             })}
           </ToDoList>
           <Footer>
-            <Dialog isOpen={showDialog}/>
+            <Dialog isOpen={showDialog} onClose={toggleDialog}/>
             <FabButton onClick={toggleDialog}>
               <IconPlus />
             </FabButton>
