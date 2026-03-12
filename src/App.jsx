@@ -59,11 +59,11 @@ function App() {
 
   const toggleDialog = () => {
     setShowDialog(!showDialog)
-    console.log('alternar modal')
   }
 
   const addTodo = () => {
     console.log('precisamos add um novo todo');
+    toggleDialog()
   }
 
   return (
